@@ -1,0 +1,15 @@
+{
+  "source": "TriageMate SOC playbook, authored by the team for defensive triage guidance.",
+  "entries": [
+    {"category": "credential_attack", "title": "Credential access triage",
+     "guidance": "Confirm which process accessed the credential store and whether it is signed and expected. Check whether the account involved is privileged. Review other recent activity from the same host and user. If dumping is confirmed, treat the exposed credentials as compromised and rotate them. On a domain controller, escalate immediately."},
+    {"category": "lateral_movement", "title": "Lateral movement triage",
+     "guidance": "Identify the source host that initiated the remote action and confirm whether the admin or service account use was authorized. Check what executed on the destination host afterwards. Look for a chain: initial access, credential theft, then movement. Contain the source host if the movement was not authorized."},
+    {"category": "ransomware", "title": "Ransomware triage",
+     "guidance": "Treat as urgent. Isolate the affected host from the network to stop spread. Check backup and shadow copy integrity. Look for the initial access vector and any credential theft that preceded it. Do not delete evidence; preserve logs. Escalate to incident response."},
+    {"category": "benign", "title": "Benign activity handling",
+     "guidance": "Confirm the activity matches known routine behaviour, such as signed system processes or scheduled maintenance. Record for awareness and close the alert. No containment needed."},
+    {"category": "false_positive", "title": "False positive confirmation",
+     "guidance": "Confirm the activity has a legitimate explanation, such as an administrator running a script, a scanner, or a scheduled task. Match it against a known ticket, schedule, or owner. Document why it was benign so the detection can be tuned, then close the alert."}
+  ]
+}

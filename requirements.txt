@@ -1,0 +1,9 @@
+gradio>=4.44
+pandas>=2.0
+openai>=1.40
+requests>=2.31
+python-dotenv>=1.0
+pytest>=8.0
+# Optional: enable semantic RAG (otherwise the built-in TF-IDF retriever is used)
+# chromadb>=0.5
+# sentence-transformers>=3.0
